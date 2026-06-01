@@ -112,6 +112,11 @@ const UserRegister = () => {
                         Already have an account?{' '}
                         <Link to="/user-login" className="text-[#6B21A8] hover:underline font-extrabold">Sign In</Link>
                     </p>
+
+                    <p className="mt-4 sm:mt-6 md:mt-8 text-[10px] sm:text-xs text-gray-500 text-center">
+                        Are you a recruiter?{' '}
+                        <Link to="/admin-login" className="text-[#6B21A8] hover:underline font-extrabold">Sign In Here</Link>
+                    </p>
                 </div>
 
                 {/* ── RIGHT: Recruitment Panel ── */}
