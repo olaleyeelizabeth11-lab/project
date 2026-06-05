@@ -17,7 +17,7 @@ const UserRegister = () => {
         setError('');
         setLoading(true);
         try {
-            await axios.post("http://localhost:5555/user/register", formData);
+            await axios.post("https://proback-ops7.onrender.com/user/register", formData);
             alert("Registration successful! Please login.");
             navigate("/user-login");
         } catch (error) {

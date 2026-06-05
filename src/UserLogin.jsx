@@ -14,7 +14,7 @@ const UserLogin = () => {
         e.preventDefault();
         setLoading(true);
         try {
-            const res = await axios.post("http://localhost:5555/user/login", { email, password });
+            const res = await axios.post("https://proback-ops7.onrender.com/user/login", { email, password });
             if (res.data.user.role !== "user") {
                 return alert("This login is for Candidates only!");
             }
