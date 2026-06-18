@@ -97,7 +97,7 @@ export default function LandingPage() {
             {/* ══════════════════════════════════════
           NAVBAR
       ══════════════════════════════════════ */}
-            <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b-2 border-[#1a0a2e]">
+            <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
                 <div className="max-w-7xl mx-auto px-4 md:px-8 py-3 flex items-center justify-between">
 
                     {/* Logo */}
@@ -117,7 +117,7 @@ export default function LandingPage() {
                             { label: 'Testimonials', href: '#testimonials' },
                         ].map(item => (
                             <a key={item.label} href={item.href}
-                                className="text-xs font-bold text-[#4a4a6a] hover:text-[#6B21A8] transition-colors uppercase tracking-wider">
+                                className="text-xs font-bold text-dark hover:text-[#6B21A8] transition-colors uppercase tracking-wider">
                                 {item.label}
                             </a>
                         ))}
@@ -202,19 +202,19 @@ export default function LandingPage() {
                         {/* Dual CTA */}
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-12">
                             <Link to="/user-register"
-                                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#6B21A8] hover:bg-[#5b1890] text-white font-extrabold px-8 py-4 rounded-2xl border-2 border-[#1a0a2e] text-sm transition-all hover:-translate-y-0.5">
+                                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#6B21A8] hover:bg-[#5b1890] text-white font-extrabold px-8 py-4 rounded-2xl  text-sm">
                                 <Briefcase size={16} /> Find a Job
                                 <ArrowRight size={14} />
                             </Link>
                             <Link to="/admin-register"
-                                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white hover:bg-[#f8f5ff] text-[#6B21A8] font-extrabold px-8 py-4 rounded-2xl border-2 border-[#6B21A8] text-sm transition-all hover:-translate-y-0.5">
+                                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white hover:bg-[#f8f5ff] text-[#6B21A8] font-extrabold px-8 py-4 rounded-2xl border-2 border-[#6B21A8] text-sm">
                                 <Building2 size={16} /> Post a Job
                                 <ArrowRight size={14} />
                             </Link>
                         </div>
 
                         {/* Quick search bar */}
-                        <div className="max-w-2xl mx-auto bg-white border-2 border-[#1a0a2e] rounded-2xl p-2 flex flex-col sm:flex-row gap-2">
+                        <div className="max-w-2xl mx-auto bg-white shadow-md rounded-2xl p-2 flex flex-col sm:flex-row gap-2">
                             <div className="relative flex-1">
                                 <Search size={14} className="absolute top-1/2 -translate-y-1/2 left-3 text-[#9d75c7]" />
                                 <input placeholder="Job title, skill, or keyword..."
@@ -226,13 +226,13 @@ export default function LandingPage() {
                                     className="w-full bg-[#f8f5ff] border-2 border-[#e2d4f5] rounded-xl py-2.5 pl-9 pr-3 text-sm text-[#0a0a0a] placeholder-[#9d75c7] focus:outline-none focus:border-[#6B21A8] transition-all" />
                             </div>
                             <button onClick={() => navigate('/user-register')}
-                                className="bg-[#6B21A8] hover:bg-[#5b1890] text-white font-extrabold px-6 py-2.5 rounded-xl text-sm transition-all border border-[#1a0a2e]">
+                                className="bg-[#6B21A8] hover:bg-[#5b1890] text-white font-extrabold px-6 py-2.5 rounded-xl text-sm transition-all">
                                 Search
                             </button>
                         </div>
 
-                        <p className="text-[11px] text-gray-400 mt-3 font-mono">
-                            Popular: <span className="text-[#6B21A8] font-bold cursor-pointer hover:underline">Frontend Developer</span> · <span className="text-[#6B21A8] font-bold cursor-pointer hover:underline">Product Manager</span> · <span className="text-[#6B21A8] font-bold cursor-pointer hover:underline">UI/UX Designer</span> · <span className="text-[#6B21A8] font-bold cursor-pointer hover:underline">Data Analyst</span>
+                        <p className="text-[14px] text-black-400 mt-5 font-mono">
+                            Popular: <span className="text-[#6B21A8] font-bold">Frontend Developer</span> · <span className="text-[#6B21A8] font-bold">Product Manager</span> · <span className="text-[#6B21A8] font-bold">UI/UX Designer</span> · <span className="text-[#6B21A8] font-bold">Data Analyst</span>
                         </p>
                     </div>
                 </div>
@@ -241,21 +241,21 @@ export default function LandingPage() {
             {/* ══════════════════════════════════════
           COMPANY LOGOS STRIP
       ══════════════════════════════════════ */}
-            <section id="companies" className="py-10 bg-[#f8f5ff] border-y-2 border-[#e2d4f5]">
+            {/* <section id="companies" className="py-10 bg-[#f8f5ff] border-y-2 border-[#e2d4f5]">
                 <div className="max-w-7xl mx-auto px-4 md:px-8">
                     <p className="text-center text-[10px] font-extrabold text-gray-400 uppercase tracking-widest mb-6">
                         Trusted by teams at
-                    </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
+                    </p> */}
+                    {/* <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
                         {COMPANIES.map(c => (
                             <div key={c}
                                 className="px-4 py-2 bg-white border-2 border-[#e2d4f5] rounded-xl text-xs font-extrabold text-[#4a4a6a] hover:border-[#6B21A8] hover:text-[#6B21A8] transition-all cursor-default">
                                 {c}
-                            </div>
-                        ))}
+                            </div> */}
+                        {/* ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* ══════════════════════════════════════
           STATS
@@ -276,7 +276,7 @@ export default function LandingPage() {
                                     {stat.value.toLocaleString()}{stat.suffix}
                                 </p>
                                 <p className="text-sm font-extrabold text-white/80 mb-0.5">{stat.label}</p>
-                                <p className="text-[10px] text-white/50 font-mono">{stat.sub}</p>
+                                <p className="text-[12px] text-white/50 font-mono">{stat.sub}</p>
                             </div>
                         ))}
                     </div>
@@ -290,16 +290,16 @@ export default function LandingPage() {
                 <div className="max-w-7xl mx-auto px-4 md:px-8">
                     <div className="text-center mb-10">
                         <h2 className="text-2xl md:text-3xl font-extrabold text-[#0a0a0a] mb-2">Browse by Category</h2>
-                        <p className="text-sm text-gray-500">Explore opportunities across every industry</p>
+                        <p className="text-sm text-gray-700">Explore opportunities across every industry</p>
                     </div>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                         {JOB_CATEGORIES.map(cat => (
                             <button key={cat.label}
                                 onClick={() => navigate('/user-register')}
-                                className="p-4 bg-white border-2 border-[#e2d4f5] rounded-2xl hover:border-[#6B21A8] hover:bg-[#fdfbff] transition-all group text-left">
+                                className="p-4 bg-white border-1 border-[#e2d4f5] rounded-2xl cursor-pointer transition-all group text-left">
                                 <span className="text-2xl mb-2 block">{cat.icon}</span>
-                                <p className="text-xs font-extrabold text-[#0a0a0a] group-hover:text-[#6B21A8] transition-colors">{cat.label}</p>
-                                <p className="text-[10px] text-gray-700 font-mono mt-0.5">{cat.count} jobs</p>
+                                <p className="text-sm font-extrabold text-[#0a0a0a] group-hover:text-[#6B21A8] transition-colors">{cat.label}</p>
+                                <p className="text-[12px] text-gray-700 font-mono mt-0.5">{cat.count} jobs</p>
                             </button>
                         ))}
                     </div>
@@ -312,19 +312,19 @@ export default function LandingPage() {
             <section id="features" className="py-16 bg-[#f8f5ff]">
                 <div className="max-w-7xl mx-auto px-4 md:px-8">
                     <div className="text-center mb-10">
-                        <h2 className="text-2xl md:text-3xl font-extrabold text-[#0a0a0a] mb-2">
+                        <h2 className="text-2xl md:text-3xl font-extrabold text-[#0a0a0a] mb-4">
                             Everything you need to{' '}
                             <span className="text-[#6B21A8]">succeed</span>
                         </h2>
-                        <p className="text-sm text-gray-500 mb-6">Powerful tools for both candidates and recruiters</p>
+                        <p className="text-lg text-gray-800 mb-6">Powerful tools for both candidates and recruiters</p>
 
                         {/* Tab switcher */}
-                        <div className="inline-flex bg-white border-2 border-[#1a0a2e] rounded-2xl p-1 gap-1">
+                        <div className="inline-flex bg-white border-1 shadow-lg border-gray-300 rounded-2xl p-1 gap-1">
                             {['candidate', 'recruiter'].map(tab => (
                                 <button key={tab} onClick={() => setActiveTab(tab)}
                                     className={`px-6 py-2 rounded-xl text-xs font-extrabold uppercase tracking-wider transition-all ${activeTab === tab
                                             ? 'bg-[#6B21A8] text-white'
-                                            : 'text-[#4a4a6a] hover:text-[#6B21A8]'
+                                            : 'text-[#4a4a6a] hover:text-gray'
                                         }`}>
                                     {tab === 'candidate' ? ' Candidates' : ' Recruiters'}
                                 </button>
@@ -335,14 +335,14 @@ export default function LandingPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                         {(activeTab === 'candidate' ? FEATURES_CANDIDATE : FEATURES_RECRUITER).map((f, i) => (
                             <div key={i}
-                                className="bg-white border-2 border-[#e2d4f5] rounded-2xl p-5 hover:border-[#6B21A8] transition-all group">
+                                className="bg-white border-2 border-[#e2d4f5] rounded-2xl p-5 transition-all group">
                                 <div className="w-10 h-10 bg-[#f0e8ff] rounded-xl flex items-center justify-center text-[#6B21A8] mb-4 border border-[#e2d4f5] group-hover:bg-[#6B21A8] group-hover:text-white group-hover:border-[#6B21A8] transition-all">
                                     {f.icon}
                                 </div>
-                                <h3 className="text-sm font-extrabold text-[#0a0a0a] mb-2 group-hover:text-[#6B21A8] transition-colors">
+                                <h3 className="text-lg font-extrabold text-[#0a0a0a] mb-2 group-hover:text-[#6B21A8] transition-colors">
                                     {f.title}
                                 </h3>
-                                <p className="text-[11px] text-gray-500 leading-relaxed">{f.desc}</p>
+                                <p className="text-[13px] text-gray-800 leading-relaxed">{f.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -356,15 +356,15 @@ export default function LandingPage() {
                 <div className="max-w-7xl mx-auto px-4 md:px-8">
                     <div className="text-center mb-10">
                         <h2 className="text-2xl md:text-3xl font-extrabold text-[#0a0a0a] mb-2">How TalentHub Works</h2>
-                        <p className="text-sm text-gray-500 mb-6">Get started in minutes — no complicated setup</p>
+                        <p className="text-lg text-gray-800 mb-6">Get started in minutes — no complicated setup</p>
 
                         {/* Tab switcher */}
-                        <div className="inline-flex bg-[#f8f5ff] border-2 border-[#1a0a2e] rounded-2xl p-1 gap-1">
+                        <div className="inline-flex bg-[#f8f5ff] border-1 shadow-lg border-gray-300 rounded-2xl p-1 gap-1">
                             {['candidate', 'recruiter'].map(tab => (
                                 <button key={tab} onClick={() => setActiveTab(tab)}
                                     className={`px-6 py-2 rounded-xl text-xs font-extrabold uppercase tracking-wider transition-all ${activeTab === tab
                                             ? 'bg-[#6B21A8] text-white'
-                                            : 'text-[#4a4a6a] hover:text-[#6B21A8]'
+                                            : 'text-[#4a4a6a] hover:text-dark'
                                         }`}>
                                     {tab === 'candidate' ? ' Candidates' : ' Recruiters'}
                                 </button>
@@ -378,7 +378,7 @@ export default function LandingPage() {
 
                         {(activeTab === 'candidate' ? HOW_IT_WORKS_CANDIDATE : HOW_IT_WORKS_RECRUITER).map((step, i) => (
                             <div key={i} className="relative z-10 flex flex-col items-center text-center">
-                                <div className="w-16 h-16 bg-[#6B21A8] rounded-2xl flex items-center justify-center border-2 border-[#1a0a2e] mb-5 relative">
+                                <div className="w-16 h-16 bg-[#6B21A8] rounded-2xl flex items-center justify-center mb-5 relative">
                                     <span className="text-xl font-extrabold text-white">{step.step}</span>
                                     {i < 2 && (
                                         <div className="hidden md:flex absolute -right-6 top-1/2 -translate-y-1/2 w-6 h-6 bg-white border-2 border-[#e2d4f5] rounded-full items-center justify-center z-20">
@@ -387,14 +387,14 @@ export default function LandingPage() {
                                     )}
                                 </div>
                                 <h3 className="text-sm font-extrabold text-[#0a0a0a] mb-2">{step.title}</h3>
-                                <p className="text-[11px] text-gray-500 leading-relaxed max-w-xs">{step.desc}</p>
+                                <p className="text-[14px] text-dark leading-relaxed max-w-xs">{step.desc}</p>
                             </div>
                         ))}
                     </div>
 
                     <div className="text-center mt-10">
                         <Link to={activeTab === 'candidate' ? '/user-register' : '/admin-register'}
-                            className="inline-flex items-center gap-2 bg-[#6B21A8] hover:bg-[#5b1890] text-white font-extrabold px-8 py-3.5 rounded-2xl border-2 border-[#1a0a2e] text-sm transition-all">
+                            className="inline-flex items-center gap-2 bg-[#6B21A8] hover:bg-[#5b1890] text-white font-extrabold px-8 py-3.5 rounded-2xl text-sm transition-all">
                             {activeTab === 'candidate' ? 'Start Job Hunting' : 'Start Hiring'}
                             <ArrowRight size={15} />
                         </Link>
@@ -409,14 +409,14 @@ export default function LandingPage() {
                 <div className="max-w-7xl mx-auto px-4 md:px-8">
                     <div className="text-center mb-10">
                         <h2 className="text-2xl md:text-3xl font-extrabold text-[#0a0a0a] mb-2">
-                            Loved by candidates <span className="text-[#6B21A8]">&</span> recruiters
+                            Loved by candidates <span className="text-dark">&</span> recruiters
                         </h2>
-                        <p className="text-sm text-gray-500">Real stories from real people</p>
+                        <p className="text-lg text-gray-900">Real stories from real people</p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {TESTIMONIALS.map((t, i) => (
-                            <div key={i} className="bg-white border-2 border-[#e2d4f5] rounded-2xl p-6 hover:border-[#6B21A8] transition-all">
+                            <div key={i} className="bg-white border-2 border-[#e2d4f5] rounded-2xl p-6 transition-all">
                                 {/* Stars */}
                                 <div className="flex items-center gap-1 mb-4">
                                     {[...Array(5)].map((_, j) => (
@@ -430,7 +430,7 @@ export default function LandingPage() {
                                     </div>
                                     <div>
                                         <p className="text-xs font-extrabold text-[#0a0a0a]">{t.name}</p>
-                                        <p className="text-[10px] text-gray-400">{t.role} · {t.company}</p>
+                                        <p className="text-[10px] text-gray-900">{t.role} · {t.company}</p>
                                     </div>
                                 </div>
                             </div>

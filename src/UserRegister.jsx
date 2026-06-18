@@ -29,13 +29,13 @@ const UserRegister = () => {
 
     return (
         <div className="min-h-screen flex items-center justify-center p-3 sm:p-4 md:p-6 lg:p-8 bg-white font-sans">
-            <div className="w-full max-w-4xl flex flex-col md:flex-row border-2 border-[#1a0a2e] rounded-lg sm:rounded-2xl overflow-hidden shadow-[4px_4px_0px_0px_rgba(26,10,46,0.8)] sm:shadow-[2px_2px_0px_0px_rgba(26,10,46,1)]">
+            <div className="w-full max-w-4xl flex flex-col md:flex-row rounded-lg sm:rounded-2xl overflow-hidden shadow-[0px_0px_1px_1px_rgba(26,10,46,0.8)] sm:shadow-[0px_0px_1px_1px_rgba(26,10,46,1)]">
 
                 {/* ── LEFT: Form ── */}
                 <div className="flex-1 bg-white p-4 sm:p-6 md:p-8 lg:p-10 flex flex-col justify-between">
                     <div>
-                        <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#0a0a0a] mb-1">Candidate Sign Up</h2>
-                        <p className="text-xs sm:text-sm text-gray-500 mb-4 sm:mb-6 md:mb-7">Find your dream job today.</p>
+                        <h2 className="text-xl text-center sm:text-2xl md:text-3xl font-extrabold text-[#0a0a0a] mb-1">Candidate Sign Up</h2>
+                        <p className="text-xs sm:text-sm text-gray-800 text-center mb-4 sm:mb-6 md:mb-7">Find your dream job today.</p>
 
                         {error && (
                             <div className="mb-3 sm:mb-4 p-2 sm:p-3 bg-red-50 border border-red-200 text-red-700 rounded-lg sm:rounded-xl text-[9px] sm:text-xs font-mono">
@@ -43,17 +43,17 @@ const UserRegister = () => {
                             </div>
                         )}
 
-                        <form onSubmit={handleRegister} className="space-y-3 sm:space-y-4">
+                        <form onSubmit={handleRegister} className="space-y-1 sm:space-y-1">
                             {/* Name row */}
                             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                                 <div className="flex-1">
-                                    <label className="block text-[8px] sm:text-[10px] font-mono uppercase tracking-widest text-[#1a0a2e] font-bold mb-1.5">First Name</label>
+                                    <label className="block text-[9px] sm:text-[13px] font-mono uppercase tracking-widest text-[#1a0a2e] font-bold mb-1.5">First Name</label>
                                     <input type="text" placeholder="Jane" required value={formData.firstName}
                                         className="w-full bg-[#f8f5ff] border-2 border-[#e2d4f5] rounded-lg sm:rounded-xl py-2 sm:py-2.5 px-3 text-xs sm:text-sm text-[#0a0a0a] placeholder-[#9d75c7] focus:outline-none focus:border-[#6B21A8] focus:bg-white transition-all"
                                         onChange={(e) => setFormData({...formData, firstName: e.target.value})} />
                                 </div>
                                 <div className="flex-1">
-                                    <label className="block text-[8px] sm:text-[10px] font-mono uppercase tracking-widest text-[#1a0a2e] font-bold mb-1.5">Last Name</label>
+                                    <label className="block text-[9px] sm:text-[12px] font-mono uppercase tracking-widest text-[#1a0a2e] font-bold mb-1.5">Last Name</label>
                                     <input type="text" placeholder="Doe" required value={formData.lastName}
                                         className="w-full bg-[#f8f5ff] border-2 border-[#e2d4f5] rounded-lg sm:rounded-xl py-2 sm:py-2.5 px-3 text-xs sm:text-sm text-[#0a0a0a] placeholder-[#9d75c7] focus:outline-none focus:border-[#6B21A8] focus:bg-white transition-all"
                                         onChange={(e) => setFormData({...formData, lastName: e.target.value})} />
