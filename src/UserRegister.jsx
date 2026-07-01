@@ -28,8 +28,8 @@ const UserRegister = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center p-3 sm:p-4 md:p-6 lg:p-8 bg-white font-sans">
-            <div className="w-full max-w-4xl flex flex-col md:flex-row rounded-lg sm:rounded-2xl overflow-hidden shadow-[0px_0px_1px_1px_rgba(26,10,46,0.8)] sm:shadow-[0px_0px_1px_1px_rgba(26,10,46,1)]">
+        <div className="min-h-screen flex items-center justify-center p-1 sm:p-4 md:p-1 lg:p-1 bg-white font-sans">
+            <div className="w-full max-w-4xl flex flex-col md:flex-row rounded-lg sm:rounded-2xl overflow-hidden shadow-[0px_0px_1px_1px_rgba(26,10,46,0.2)] sm:shadow-[0px_0px_1px_1px_rgba(26,10,46,0.2)]">
 
                 {/* ── LEFT: Form ── */}
                 <div className="flex-1 bg-white p-4 sm:p-6 md:p-8 lg:p-10 flex flex-col justify-between">
@@ -53,7 +53,7 @@ const UserRegister = () => {
                                         onChange={(e) => setFormData({...formData, firstName: e.target.value})} />
                                 </div>
                                 <div className="flex-1">
-                                    <label className="block text-[9px] sm:text-[12px] font-mono uppercase tracking-widest text-[#1a0a2e] font-bold mb-1.5">Last Name</label>
+                                    <label className="block text-[9px] sm:text-[13px] font-mono uppercase tracking-widest text-[#1a0a2e] font-bold mb-1.5">Last Name</label>
                                     <input type="text" placeholder="Doe" required value={formData.lastName}
                                         className="w-full bg-[#f8f5ff] border-2 border-[#e2d4f5] rounded-lg sm:rounded-xl py-2 sm:py-2.5 px-3 text-xs sm:text-sm text-[#0a0a0a] placeholder-[#9d75c7] focus:outline-none focus:border-[#6B21A8] focus:bg-white transition-all"
                                         onChange={(e) => setFormData({...formData, lastName: e.target.value})} />
@@ -62,7 +62,7 @@ const UserRegister = () => {
 
                             {/* Email */}
                             <div>
-                                <label className="block text-[8px] sm:text-[10px] font-mono uppercase tracking-widest text-[#1a0a2e] font-bold mb-1.5">Email Address</label>
+                                <label className="block text-[9px] sm:text-[13px] font-mono uppercase tracking-widest text-[#1a0a2e] font-bold mb-1.5">Email Address</label>
                                 <div className="relative">
                                     <Mail size={12} className="absolute top-1/2 -translate-y-1/2 left-3 text-[#9d75c7] sm:w-3.5" />
                                     <input type="email" placeholder="name@example.com" required value={formData.email}
@@ -73,7 +73,7 @@ const UserRegister = () => {
 
                             {/* Password */}
                             <div>
-                                <label className="block text-[8px] sm:text-[10px] font-mono uppercase tracking-widest text-[#1a0a2e] font-bold mb-1.5">Password</label>
+                                <label className="block text-[9px] sm:text-[13px] font-mono uppercase tracking-widest text-[#1a0a2e] font-bold mb-1.5">Password</label>
                                 <div className="relative">
                                     <Lock size={12} className="absolute top-1/2 -translate-y-1/2 left-3 text-[#9d75c7] sm:w-3.5" />
                                     <input type={showPassword ? "text" : "password"} placeholder="••••••••" required value={formData.password}
@@ -84,11 +84,11 @@ const UserRegister = () => {
                                         {showPassword ? <EyeOff size={12} className="sm:w-3.5" /> : <Eye size={12} className="sm:w-3.5" />}
                                     </button>
                                 </div>
-                                <p className="mt-1 sm:mt-1.5 text-[8px] sm:text-[10px] font-mono text-[#7a5fa8]">8+ characters, 1 number required</p>
+                                <p className="mt-1 sm:mt-1.5 text-[8px] sm:text-[10px] font-mono text-dark">8+ characters, 1 number required</p>
                             </div>
 
                             <button type="submit" disabled={loading}
-                                className="w-full bg-[#6B21A8] hover:bg-[#5b1890] text-white font-extrabold py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm tracking-wide transition-all shadow-[2px_2px_0px_0px_rgba(26,10,46,0.8)] sm:shadow-[3px_3px_0px_0px_rgba(26,10,46,1)] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_0px_rgba(26,10,46,1)] disabled:opacity-50">
+                                className="w-full bg-[#6B21A8] hover:bg-[#5b1890] text-white font-extrabold py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm tracking-wide transition-all active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_0px_rgba(26,10,46,1)] disabled:opacity-50">
                                 {loading ? 'Creating Profile...' : 'Create Account'}
                             </button>
                         </form>
@@ -108,14 +108,14 @@ const UserRegister = () => {
                         </div>
                     </div>
 
-                    <p className="mt-4 sm:mt-6 md:mt-8 text-[10px] sm:text-xs text-gray-500 text-center">
+                    <p className="mt-4 sm:mt-6 md:mt-8 text-[10px] sm:text-xs text-gray-900 text-center">
                         Already have an account?{' '}
                         <Link to="/user-login" className="text-[#6B21A8] hover:underline font-extrabold">Sign In</Link>
                     </p>
 
-                    <p className="mt-4 sm:mt-6 md:mt-8 text-[10px] sm:text-xs text-gray-500 text-center">
+                    <p className="mt-2 sm:mt-6 md:mt-4 text-[10px] sm:text-xs text-gray-900 text-center">
                         Are you a recruiter?{' '}
-                        <Link to="/admin-login" className="text-[#6B21A8] hover:underline font-extrabold">Sign In Here</Link>
+                        <Link to="/admin-register" className="text-[#6B21A8] hover:underline font-extrabold">Sign Up Here</Link>
                     </p>
                 </div>
 

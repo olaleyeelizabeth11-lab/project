@@ -108,7 +108,7 @@ return (
 <div className="min-h-screen bg-[#f7f5ff] font-sans">
 
     {/* ── Header ── */}
-    <header className="bg-white border-b-2 border-[#1a0a2e] px-4 md:px-8 py-4 flex items-center justify-between gap-3 sticky top-0 z-20">
+    <header className="bg-white border-b-1 border-[rgba(26,10,46,0.1)] px-4 md:px-8 py-4 flex items-center justify-between gap-3 sticky top-0 z-20">
         <div className="flex items-center gap-3">
             <button onClick={() => navigate('/user-dashboard')}
                 className="w-8 h-8 bg-[#f8f5ff] border-2 border-[#e2d4f5] rounded-xl flex items-center justify-center hover:border-[#6B21A8] transition-all">
@@ -116,15 +116,15 @@ return (
             </button>
             <div>
                 <h1 className="text-base font-extrabold text-[#0a0a0a]">Browse Jobs</h1>
-                <p className="text-[10px] text-gray-400 font-mono">{filtered.length} opportunit{filtered.length !== 1 ? 'ies' : 'y'} found</p>
+                <p className="text-[13px] text-gray-900 font-mono">{filtered.length} opportunit{filtered.length !== 1 ? 'ies' : 'y'} found</p>
             </div>
         </div>
-        <div className="flex items-center gap-2 bg-[#f8f5ff] border-2 border-[#e2d4f5] rounded-xl px-3 py-1.5">
+        {/* <div className="flex items-center gap-2 bg-[#f8f5ff] border-2 border-[#e2d4f5] rounded-xl px-3 py-1.5">
             <div className="w-6 h-6 bg-[#6B21A8] rounded-lg flex items-center justify-center text-white text-[9px] font-extrabold">
                 {user?.firstName?.[0]}{user?.lastName?.[0]}
             </div>
             <span className="hidden sm:block text-xs font-extrabold text-[#1a0a2e]">{user?.firstName}</span>
-        </div>
+        </div> */}
     </header>
 
     <div className="max-w-6xl mx-auto px-4 md:px-8 py-6">
@@ -132,10 +132,10 @@ return (
         {/* ── Search + filters ── */}
         <div className="flex flex-col sm:flex-row gap-3 mb-5">
             <div className="relative flex-1">
-                <Search size={13} className="absolute top-1/2 -translate-y-1/2 left-3 text-[#9d75c7]" />
+                <Search size={19} className="absolute top-1/2 -translate-y-1/2 left-3 text-[#9d75c7]" />
                 <input value={search} onChange={e => setSearch(e.target.value)}
                     placeholder="Search job title, company, location..."
-                    className="w-full bg-white border-2 border-[#e2d4f5] rounded-xl py-2.5 pl-9 pr-9 text-xs text-[#1a0a2e] placeholder-[#9d75c7] focus:outline-none focus:border-[#6B21A8] transition-all" />
+                    className="w-full bg-white border-2 border-[#e2d4f5] rounded-xl py-2.5 pl-9 pr-9 text-sm text-[#1a0a2e] placeholder-[#9d75c7] focus:outline-none focus:border-[rgba(26,10,46,0.2)] transition-all" />
                 {search && (
                     <button onClick={() => setSearch('')} className="absolute top-1/2 -translate-y-1/2 right-3">
                         <X size={12} className="text-gray-400 hover:text-gray-700" />
@@ -147,9 +147,9 @@ return (
             <div className="flex gap-2 overflow-x-auto pb-0.5 flex-nowrap">
                 {JOB_TYPES.map(t => (
                     <button key={t} onClick={() => setFilterType(t)}
-                        className={`px-3 py-2 rounded-xl text-[10px] font-extrabold uppercase tracking-wider border-2 transition-all whitespace-nowrap ${filterType === t
+                        className={`px-3 py-2 rounded-xl text-[10px] cursor-pointer font-extrabold uppercase tracking-wider border-2 transition-all whitespace-nowrap ${filterType === t
                                 ? 'bg-[#6B21A8] text-white border-[#6B21A8]'
-                                : 'bg-white text-[#6B21A8] border-[#e2d4f5] hover:border-[#6B21A8]'
+                                : 'bg-white text-[#6B21A8] border-[#e2d4f5] '
                             }`}>
                         {t}
                     </button>
@@ -180,14 +180,14 @@ return (
                     const alreadyApplied = appliedIds.includes(job._id);
                     return (
                         <div key={job._id}
-                            className="bg-white border-2 border-[#e2d4f5] rounded-2xl p-5 hover:border-[#6B21A8] transition-all group flex flex-col">
+                            className="bg-white border-2 border-[#e2d4f5] rounded-2xl p-5 transition-all group flex flex-col">
 
                             {/* Top row */}
                             <div className="flex items-start justify-between mb-3">
                                 <div className="w-10 h-10 bg-[#f0e8ff] rounded-xl flex items-center justify-center text-[#6B21A8] border border-[#e2d4f5] group-hover:bg-[#6B21A8] group-hover:text-white group-hover:border-[#6B21A8] transition-all flex-shrink-0">
                                     <Briefcase size={16} />
                                 </div>
-                                <span className={`text-[9px] font-extrabold px-2 py-0.5 rounded-lg border uppercase tracking-wider ${typeColor(job.jobType)}`}>
+                                <span className={`text-[12px] font-extrabold px-2 py-0.5 rounded-lg border uppercase tracking-wider ${typeColor(job.jobType)}`}>
                                     {job.jobType}
                                 </span>
                             </div>
@@ -196,28 +196,28 @@ return (
                             <h3 className="text-sm font-extrabold text-[#0a0a0a] group-hover:text-[#6B21A8] transition-colors mb-0.5 leading-tight">
                                 {job.title}
                             </h3>
-                            <p className="text-[11px] font-bold text-gray-500 mb-3 flex items-center gap-1">
+                            <p className="text-[13px] font-bold text-gray-900 mb-3 flex items-center gap-1">
                                 <Building2 size={10} />{job.company}
                             </p>
 
                             {/* Description preview */}
-                            <p className="text-[11px] text-gray-400 leading-relaxed line-clamp-2 mb-3 flex-1">
+                            <p className="text-[13px] text-gray-900 leading-relaxed line-clamp-2 mb-3 flex-1">
                                 {job.description}
                             </p>
 
                             {/* Meta chips */}
                             <div className="flex flex-wrap gap-1.5 mb-4">
-                                <span className="flex items-center gap-1 text-[10px] bg-[#f8f5ff] border border-[#e2d4f5] px-2 py-0.5 rounded-lg text-gray-500">
-                                    <MapPin size={9} />{job.location}
+                                <span className="flex items-center gap-1 text-[12px] bg-[#f8f5ff] border border-[#e2d4f5] px-2 py-0.5 rounded-lg text-dark font-bold">
+                                    <MapPin size={11} />{job.location}
                                 </span>
                                 {job.salary && (
-                                    <span className="flex items-center gap-1 text-[10px] bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-lg text-emerald-700 font-bold">
-                                        <DollarSign size={9} />{job.salary}
+                                    <span className="flex items-center gap-1 text-[12px] bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-lg text-dark font-bold">
+                                        <DollarSign size={11} />{job.salary}
                                     </span>
                                 )}
                                 {job.requirements?.length > 0 && (
-                                    <span className="flex items-center gap-1 text-[10px] bg-[#f8f5ff] border border-[#e2d4f5] px-2 py-0.5 rounded-lg text-gray-500">
-                                        <Users size={9} />{job.requirements.length} skills
+                                    <span className="flex items-center gap-1 text-[12px] bg-[#f8f5ff] border border-[#e2d4f5] px-2 py-0.5 rounded-lg text-dark font-bold">
+                                        <Users size={11} />{job.requirements.length} skills
                                     </span>
                                 )}
                             </div>

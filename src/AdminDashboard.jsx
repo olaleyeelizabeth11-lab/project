@@ -97,11 +97,11 @@ export default function AdminDashboard() {
   ];
 
   const Sidebar = () => (
-    <aside className="w-56 bg-white border-r-2 border-[#1a0a2e] flex flex-col justify-between py-6 px-3 flex-shrink-0 h-full">
+    <aside className="w-56 bg-white border-r-1 border-[rgba(26,10,46,0.2)] flex flex-col justify-between py-6 px-3 flex-shrink-0 h-full">
       <div>
         {/* Logo */}
         <div className="flex items-center gap-2 mb-8 px-2">
-          <div className="w-8 h-8 bg-[#6B21A8] rounded-lg flex items-center justify-center border border-[#1a0a2e]">
+          <div className="w-8 h-8 bg-[#6B21A8] rounded-lg flex items-center justify-center">
             <Building2 size={14} className="text-white" />
           </div>
           <span className="text-sm font-extrabold text-[#1a0a2e] tracking-tight">Recruiter</span>
@@ -128,7 +128,7 @@ export default function AdminDashboard() {
 
         {/* Quick stats in sidebar */}
         <div className="mt-6 mx-1 space-y-2">
-          <p className="text-[9px] font-extrabold text-gray-400 uppercase tracking-widest px-2">Quick Stats</p>
+          <p className="text-[9px] font-extrabold text-gray-900 uppercase tracking-widest px-2">Quick Stats</p>
           <div className="p-3 bg-[#f8f5ff] border border-[#e2d4f5] rounded-xl">
             <div className="flex justify-between items-center mb-1">
               <span className="text-[10px] text-gray-500">Fill rate</span>
@@ -175,7 +175,7 @@ export default function AdminDashboard() {
       <div className="flex-1 flex flex-col overflow-hidden min-w-0">
 
         {/* Header */}
-        <header className="bg-white border-b-2 border-[#1a0a2e] px-4 md:px-6 py-3 flex items-center justify-between flex-shrink-0 gap-3">
+        <header className="bg-white border-b-1 border-[rgba(26,10,46,0.2)] px-4 md:px-6 py-3 flex items-center justify-between flex-shrink-0 gap-3">
 
           <button onClick={() => setSidebarOpen(true)}
             className="md:hidden w-8 h-8 bg-[#f8f5ff] border-2 border-[#e2d4f5] rounded-xl flex items-center justify-center">
@@ -187,7 +187,7 @@ export default function AdminDashboard() {
             <Search size={13} className="absolute top-1/2 -translate-y-1/2 left-3 text-[#9d75c7]" />
             <input value={searchQuery} onChange={e => setSearchQuery(e.target.value)}
               placeholder="Search jobs, applicants..."
-              className="w-full bg-[#f8f5ff] border-2 border-[#e2d4f5] rounded-xl py-2 pl-8 pr-3 text-xs text-[#1a0a2e] placeholder-[#9d75c7] focus:outline-none focus:border-[#6B21A8] transition-all" />
+              className="w-full bg-[#f8f5ff] border-2 border-[#e2d4f5] rounded-xl py-2 pl-8 pr-3 text-xs text-[#1a0a2e] placeholder-[#9d75c7] focus:outline-none  transition-all" />
           </div>
 
           {/* Right */}
@@ -271,14 +271,13 @@ export default function AdminDashboard() {
             <h1 className="text-xl md:text-2xl font-extrabold text-[#0a0a0a]">
               Welcome back, {user.firstName}! 👋
             </h1>
-            <p className="text-[11px] text-gray-500 mt-0.5">Here's what's happening with your job listings today.</p>
           </div>
 
           {/* ── Stat cards ── */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
             {STAT_CARDS.map(card => (
               <div key={card.label}
-                className="bg-white border-2 border-[#1a0a2e] rounded-2xl p-4 flex items-center gap-3 hover:-translate-y-0.5 transition-all">
+                className="bg-white border-1 border-[rgba(26,10,46,0.1)] rounded-2xl p-4 flex items-center gap-3 transition-all">
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 border border-[#e2d4f5]"
                   style={{ background: card.light, color: card.accent }}>
                   {card.icon}
@@ -295,14 +294,13 @@ export default function AdminDashboard() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
 
             {/* Recent Applications */}
-            <div className="bg-white border-2 border-[#1a0a2e] rounded-2xl p-5 md:col-span-2">
+            <div className="bg-white border-1 border-[rgba(26,10,46,0.1)] rounded-2xl p-5 md:col-span-2">
               <div className="flex justify-between items-center mb-4">
                 <div>
                   <h3 className="text-sm font-extrabold text-[#0a0a0a]">Recent Applications</h3>
-                  <p className="text-[10px] text-gray-400 mt-0.5">Latest candidates across all your job listings</p>
                 </div>
                 <Link to="/admin-applicants"
-                  className="text-[10px] font-extrabold text-[#6B21A8] hover:underline flex items-center gap-1">
+                  className="text-[10px] font-extrabold text-dark hover:underline flex items-center gap-1">
                   View all <ChevronRight size={11} />
                 </Link>
               </div>
@@ -379,7 +377,7 @@ export default function AdminDashboard() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 
             {/* Application breakdown */}
-            <div className="bg-white border-2 border-[#1a0a2e] rounded-2xl p-5">
+            <div className="bg-white border-1 border-[rgba(26,10,46,0.1)] rounded-2xl p-5">
               <h3 className="text-sm font-extrabold text-[#0a0a0a] mb-4">Application Breakdown</h3>
               <div className="space-y-3">
                 {[
@@ -406,7 +404,7 @@ export default function AdminDashboard() {
             </div>
 
             {/* Quick actions */}
-            <div className="bg-white border-2 border-[#1a0a2e] rounded-2xl p-5">
+            <div className="bg-white border-1 border-[rgba(26,10,46,0.1)] rounded-2xl p-5">
               <h3 className="text-sm font-extrabold text-[#0a0a0a] mb-4">Quick Actions</h3>
               <div className="space-y-2">
                 {[

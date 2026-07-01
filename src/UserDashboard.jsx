@@ -132,11 +132,11 @@ export default function UserDashboard() {
   }[s] || 'bg-gray-100 text-gray-700 border border-gray-200');
 
   const Sidebar = () => (
-    <aside className="w-56 bg-white border-r-2 border-[#1a0a2e] flex flex-col justify-between py-6 px-3 flex-shrink-0 h-full">
+    <aside className="w-56 bg-white border-r-1 border-[rgba(26,10,46,0.1)] flex flex-col justify-between py-6 px-3 flex-shrink-0 h-full">
       <div>
         {/* Logo */}
         <div className="flex items-center gap-2 mb-8 px-2">
-          <div className="w-8 h-8 bg-[#6B21A8] rounded-lg flex items-center justify-center border border-[#1a0a2e]">
+          <div className="w-8 h-8 bg-[#6B21A8] rounded-lg flex items-center justify-center">
             <Briefcase size={14} className="text-white" />
           </div>
           <span className="text-sm font-extrabold text-[#1a0a2e] tracking-tight">TalentHub</span>
@@ -206,7 +206,7 @@ export default function UserDashboard() {
       <div className="flex-1 flex flex-col overflow-hidden min-w-0">
 
         {/* Header */}
-        <header className="bg-white border-b-2 border-[#1a0a2e] px-4 md:px-6 py-3 flex items-center justify-between flex-shrink-0 gap-3">
+        <header className="bg-white border-b-1 border-[rgba(26,10,46,0.1)] px-4 md:px-6 py-3 flex items-center justify-between flex-shrink-0 gap-3">
 
           {/* Mobile hamburger */}
           <button onClick={() => setSidebarOpen(true)}
@@ -222,7 +222,7 @@ export default function UserDashboard() {
               onChange={e => setSearchQuery(e.target.value)}
               onFocus={() => searchResults.length > 0 && setSearchOpen(true)}
               placeholder="Search jobs, companies..."
-              className="w-full bg-[#f8f5ff] border-2 border-[#e2d4f5] rounded-xl py-2 pl-8 pr-3 text-xs text-[#1a0a2e] placeholder-[#9d75c7] focus:outline-none focus:border-[#6B21A8] transition-all"
+              className="w-full bg-[#f8f5ff] border-2 border-[#e2d4f5] rounded-xl py-2 pl-8 pr-3 text-xs text-[#1a0a2e] placeholder-[#9d75c7] focus:outline-none transition-all"
             />
 
             {/* Search dropdown */}
@@ -364,9 +364,8 @@ export default function UserDashboard() {
           {/* Greeting */}
           <div className="mb-5">
             <h1 className="text-xl md:text-2xl font-extrabold text-[#0a0a0a]">
-              Good day, {user.firstName}! 👋
+              Good day, {user.firstName}! 
             </h1>
-            <p className="text-[11px] text-gray-500 mt-0.5">Here's your job search overview</p>
           </div>
 
           {/* Stat cards */}
@@ -377,14 +376,14 @@ export default function UserDashboard() {
               { icon: <Zap size={16} />,        label: 'New Matches',   value: jobs.length,           accent: '#059669', light: '#d1fae5' },
             ].map(card => (
               <div key={card.label}
-                className="bg-white border-2 border-[#1a0a2e] rounded-2xl p-4 flex items-center gap-4 hover:-translate-y-0.5 transition-all">
+                className="bg-white border-1 border-[rgba(26,10,46,0.1)] rounded-2xl p-4 flex items-center gap-4 transition-all">
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 border border-[#e2d4f5]"
                   style={{ background: card.light, color: card.accent }}>
                   {card.icon}
                 </div>
                 <div>
                   <p className="text-2xl font-extrabold text-[#0a0a0a]">{card.value}</p>
-                  <p className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">{card.label}</p>
+                  <p className="text-[10px] text-gray-900 uppercase tracking-widest font-bold">{card.label}</p>
                 </div>
               </div>
             ))}
@@ -394,7 +393,7 @@ export default function UserDashboard() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
 
             {/* Profile Completion */}
-            <div className="bg-white border-2 border-[#1a0a2e] rounded-2xl p-5">
+            <div className="bg-white border border-[rgba(26,10,46,0.2)] rounded-2xl p-5">
               <div className="flex justify-between items-start mb-3">
                 <div>
                   <h3 className="text-sm font-extrabold text-[#0a0a0a]">Profile Completion</h3>
@@ -420,26 +419,26 @@ export default function UserDashboard() {
               </div>
               {pct < 100 && (
                 <button onClick={() => navigate(`/user-profile/${user.id}`)}
-                  className="flex items-center gap-1 bg-[#6B21A8] hover:bg-[#5b1890] text-white text-[10px] font-extrabold px-3 py-2 rounded-xl border border-[#1a0a2e] transition-all">
+                  className="flex items-center gap-1 bg-[#6B21A8] hover:bg-[#5b1890] text-white text-[12px] font-extrabold px-3 py-2 rounded-xl cursor-pointer transition-all">
                   Complete profile <ChevronRight size={11} />
                 </button>
               )}
             </div>
 
             {/* Recent Applications */}
-            <div className="bg-white border-2 border-[#1a0a2e] rounded-2xl p-5">
+            <div className="bg-white border border-[rgba(26,10,46,0.1)] rounded-2xl p-5">
              <div className="flex justify-between items-center mb-4">
                 <h3 className="text-sm font-extrabold text-[#0a0a0a]">Recent Applications</h3>
-                <Link to="/my-applications" className="text-[10px] font-extrabold text-[#6B21A8] hover:underline">
+                <Link to="/my-applications" className="text-[13px] font-extrabold text-[#6B21A8] hover:underline">
                   View all →
                 </Link>
               </div>
               {applications.length === 0 ? (
                 <div className="flex flex-col items-center justify-center h-32 text-center border-2 border-dashed border-[#e2d4f5] rounded-xl">
                   <Briefcase size={24} className="text-[#e2d4f5] mb-2" />
-                  <p className="text-[10px] text-gray-400 uppercase tracking-wider font-bold">No applications yet</p>
+                  <p className="text-[10px] text-gray-900 uppercase tracking-wider font-bold">No applications yet</p>
                   <button onClick={() => navigate('/jobs')}
-                    className="mt-3 text-[10px] font-extrabold text-[#6B21A8] hover:underline">
+                    className="mt-3 text-[13px] font-extrabold text-[#6B21A8] hover:underline">
                     Browse jobs →
                   </button>
                 </div>
@@ -450,9 +449,9 @@ export default function UserDashboard() {
                       className="flex items-center justify-between p-2.5 bg-[#f8f5ff] border border-[#e2d4f5] rounded-xl hover:border-[#6B21A8] transition-colors">
                       <div className="min-w-0 flex-1">
                         <p className="text-xs font-extrabold text-[#0a0a0a] truncate">{app.job?.title || 'Job'}</p>
-                        <p className="text-[10px] text-gray-500">{app.job?.company}</p>
+                        <p className="text-[10px] text-gray-900">{app.job?.company}</p>
                       </div>
-                      <span className={`text-[9px] font-extrabold px-2 py-0.5 rounded-lg uppercase tracking-wider flex-shrink-0 ml-2 ${statusBadge(app.status)}`}>
+                      <span className={`text-[12px] font-extrabold px-2 py-0.5 rounded-lg uppercase tracking-wider flex-shrink-0 ml-2 ${statusBadge(app.status)}`}>
                         {app.status}
                       </span>
                     </div>
@@ -463,38 +462,38 @@ export default function UserDashboard() {
           </div>
 
           {/* Recommended Jobs */}
-          <div className="bg-white border-2 border-[#1a0a2e] rounded-2xl p-5">
+          <div className="bg-white border border-[rgba(26,10,46,0.1)] rounded-2xl p-5">
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-sm font-extrabold text-[#0a0a0a]">Recommended Jobs</h3>
-              <Link to="/jobs" className="text-[10px] font-extrabold text-[#6B21A8] hover:underline">
+              <Link to="/jobs" className="text-[13px] font-extrabold text-[#6B21A8] hover:underline">
                 See all →
               </Link>
             </div>
             {jobs.length === 0 ? (
-              <p className="text-[10px] text-gray-400 uppercase tracking-wider text-center py-6 border-2 border-dashed border-[#e2d4f5] rounded-xl">
+              <p className="text-[10px] text-gray-900 uppercase tracking-wider text-center py-6 border-2 border-dashed border-[#e2d4f5] rounded-xl">
                 No jobs available right now
               </p>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols gap-3">
                 {jobs.slice(0, 4).map(job => (
                   <div key={job._id}
                     onClick={() => navigate('/jobs')}
-                    className="p-3.5 border-2 border-[#e2d4f5] rounded-xl hover:border-[#6B21A8] hover:bg-[#fdfbff] group cursor-pointer transition-all">
+                    className="p-3.5 border-2 border-[#e2d4f5] rounded-xl hover:bg-[#fdfbff] group cursor-pointer transition-all">
                     <div className="flex items-start justify-between mb-2.5">
                       <div className="w-8 h-8 bg-[#f0e8ff] rounded-lg flex items-center justify-center text-[#6B21A8] flex-shrink-0">
                         <Briefcase size={13} />
                       </div>
-                      <span className="text-[9px] font-extrabold px-1.5 py-0.5 bg-[#f0e8ff] border border-[#c4a0e8] rounded-lg text-[#6B21A8] uppercase tracking-wide">
+                      <span className="text-[11px] font-extrabold px-1.5 py-0.5 bg-[#f0e8ff] border-1 border-[#c4a0e8] rounded-lg text-[#6B21A8] uppercase tracking-wide">
                         {job.jobType}
                       </span>
                     </div>
                     <p className="text-xs font-extrabold text-[#0a0a0a] mb-0.5 group-hover:text-[#6B21A8] transition-colors leading-tight">{job.title}</p>
-                    <p className="text-[10px] text-gray-500 mb-2">{job.company}</p>
-                    <div className="flex items-center gap-1 text-[10px] text-gray-400">
+                    <p className="text-[12px] text-gray-900 mb-2">{job.company}</p>
+                    <div className="flex items-center gap-1 text-[12px] text-gray-900">
                       <MapPin size={9} />{job.location}
                     </div>
                     {job.salary && (
-                      <p className="text-[10px] font-extrabold text-emerald-600 mt-1.5">{job.salary}</p>
+                      <p className="text-[13px] font-extrabold text-emerald-800 mt-1.5">{job.salary}</p>
                     )}
                   </div>
                 ))}

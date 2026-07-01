@@ -31,22 +31,22 @@ const AdminRegister = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-3 sm:p-4 md:p-6 lg:p-8 bg-white font-sans">
-      <div className="w-full max-w-4xl flex flex-col md:flex-row border-2 border-[#1a0a2e] rounded-lg sm:rounded-2xl overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center p-3 sm:p-4 md:p-6 lg:p-1 bg-white font-sans">
+      <div className="w-full max-w-4xl flex flex-col md:flex-row shadow-[0px_0px_1px_1px_rgba(26,10,46,0.8)] sm:shadow-[0px_0px_1px_1px_rgba(26,10,46,0.2)] rounded-lg sm:rounded-2xl overflow-hidden">
 
         {/* ── LEFT: Form ── */}
-        <div className="flex-1 bg-white p-4 sm:p-6 md:p-8 lg:p-10 flex flex-col justify-between">
+        <div className="flex-1 bg-white p-1 sm:p-6 md:p-8 lg:p-8 flex flex-col justify-between">
           <div>
             {/* Brand */}
-            <div className="flex items-center gap-2 mb-4 sm:mb-6 md:mb-8">
-              <div className="w-7 sm:w-8 h-7 sm:h-8 bg-[#6B21A8] rounded-lg flex items-center justify-center border border-[#1a0a2e]">
+            <div className="flex items-center gap-2 mb-1 sm:mb-6 md:mb-3 text-center justify-center">
+              <div className="w-7 sm:w-8 h-7 sm:h-8 bg-[#6B21A8] rounded-lg flex items-center justify-center ">
                 <Building2 size={14} className="text-white sm:w-4" />
               </div>
-              <span className="text-xs sm:text-sm font-extrabold text-[#1a0a2e] tracking-tight">Recruiter Portal</span>
+              <span className="text-sm sm:text-sm font-extrabold text-[#1a0a2e] tracking-tight">Recruiter Portal</span>
             </div>
 
             <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#0a0a0a] mb-1">Create Recruiter Account</h2>
-            <p className="text-xs sm:text-sm text-gray-500 mb-4 sm:mb-6 md:mb-8">Start posting jobs and finding top talent.</p>
+            <p className="text-lg sm:text-sm text-center text-gray-900 mb-4 sm:mb-6 md:mb-8">Start posting jobs and finding top talent.</p>
 
             {error && (
               <div className="mb-4 sm:mb-5 p-2 sm:p-3 bg-red-50 border border-red-200 text-red-700 rounded-lg sm:rounded-xl text-[10px] sm:text-xs font-mono">
@@ -54,12 +54,12 @@ const AdminRegister = () => {
               </div>
             )}
 
-            <form onSubmit={handleRegister} className="space-y-3 sm:space-y-4">
+            <form onSubmit={handleRegister} className="space-y-1 sm:space-y-1">
 
               {/* Name row */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <div className="flex-1">
-                  <label className="block text-[8px] sm:text-[10px] font-mono uppercase tracking-widest text-[#1a0a2e] font-bold mb-1.5">
+                  <label className="block text-[9px] sm:text-[13px] font-mono uppercase tracking-widest text-[#1a0a2e] font-bold mb-1.5">
                     First Name
                   </label>
                   <div className="relative">
@@ -72,7 +72,7 @@ const AdminRegister = () => {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <label className="block text-[8px] sm:text-[10px] font-mono uppercase tracking-widest text-[#1a0a2e] font-bold mb-1.5">
+                  <label className="block text-[9px] sm:text-[13px] font-mono uppercase tracking-widest text-[#1a0a2e] font-bold mb-1.5">
                     Last Name
                   </label>
                   <div className="relative">
@@ -88,7 +88,7 @@ const AdminRegister = () => {
 
               {/* Email */}
               <div>
-                <label className="block text-[8px] sm:text-[10px] font-mono uppercase tracking-widest text-[#1a0a2e] font-bold mb-1.5">
+                <label className="block text-[9px] sm:text-[13px] font-mono uppercase tracking-widest text-[#1a0a2e] font-bold mb-1.5">
                   Work Email
                 </label>
                 <div className="relative">
@@ -103,7 +103,7 @@ const AdminRegister = () => {
 
               {/* Password */}
               <div>
-                <label className="block text-[8px] sm:text-[10px] font-mono uppercase tracking-widest text-[#1a0a2e] font-bold mb-1.5">
+                <label className="block text-[9px] sm:text-[13px] font-mono uppercase tracking-widest text-[#1a0a2e] font-bold mb-1.5">
                   Password
                 </label>
                 <div className="relative">
@@ -119,31 +119,31 @@ const AdminRegister = () => {
                     {showPassword ? <EyeOff size={12} className="sm:w-3.5" /> : <Eye size={12} className="sm:w-3.5" />}
                   </button>
                 </div>
-                <p className="mt-1 sm:mt-1.5 text-[8px] sm:text-[10px] font-mono text-[#7a5fa8]">
+                <p className="mt-1 sm:mt-1.5 text-[8px] sm:text-[10px] font-mono text-dark">
                   8+ characters, 1 number required
                 </p>
               </div>
 
               {/* Submit */}
               <button type="submit" disabled={loading}
-                className="w-full bg-[#6B21A8] hover:bg-[#5b1890] text-white font-extrabold py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm tracking-wide transition-all border border-[#1a0a2e] disabled:opacity-50 mt-1.5 sm:mt-2">
+                className="w-full bg-[#6B21A8] hover:bg-[#5b1890] text-white font-extrabold py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm tracking-wide transition-all disabled:opacity-50 cursor-pointer mt-1.5 sm:mt-2">
                 {loading ? 'Creating Account...' : 'Create Recruiter Account'}
               </button>
             </form>
 
             {/* Divider */}
-            <div className="relative flex items-center gap-3 my-3 sm:my-4 md:my-6">
+            <div className="relative flex items-center gap-3 my-1 sm:my-4 md:my-6">
               <div className="flex-1 border-t-2 border-dashed border-[#d8c7f0]"></div>
-              <span className="text-[7px] sm:text-[10px] font-mono text-[#9d75c7] uppercase tracking-widest">Recruiter only</span>
+              <span className="text-[7px] sm:text-[10px] font-mono text-dark uppercase tracking-widest">Recruiter only</span>
               <div className="flex-1 border-t-2 border-dashed border-[#d8c7f0]"></div>
             </div>
 
             {/* Security notice */}
-            <div className="bg-[#f8f5ff] border border-[#e2d4f5] rounded-lg sm:rounded-xl p-2.5 sm:p-3 md:p-4">
-              <p className="text-[8px] sm:text-[10px] font-mono text-[#6B21A8] font-bold uppercase tracking-wider mb-1">
+            <div className="bg-[#f8f5ff] border border-[#e2d4f5] rounded-lg sm:rounded-xl p-2.5 sm:p-3 md:p-1">
+              <p className="text-[8px] sm:text-[10px] font-mono text-[#6B21A8] font-bold uppercase tracking-wider ">
                 🔒 Admin Access Only
               </p>
-              <p className="text-[9px] sm:text-[11px] text-gray-500 leading-relaxed">
+              <p className="text-[6px] sm:text-[11px] text-gray-900 leading-relaxed">
                 Recruiter accounts have full access to post jobs and manage applicants.
                 Only register if you are an authorized hiring manager.
               </p>
@@ -151,14 +151,14 @@ const AdminRegister = () => {
           </div>
 
           {/* Footer */}
-          <div className="mt-4 sm:mt-6 md:mt-8 space-y-1.5 sm:space-y-2 text-center">
-            <p className="text-[10px] sm:text-xs text-gray-500">
+          <div className="mt-2 sm:mt-6 md:mt-4 space-y-1 sm:space-y-2 text-center">
+            <p className="text-[10px] sm:text-xs text-gray-900">
               Already have a recruiter account?{' '}
               <Link to="/admin-login" className="text-[#6B21A8] hover:underline font-extrabold">
                 Sign In
               </Link>
             </p>
-            <p className="text-[10px] sm:text-xs text-gray-500">
+            <p className="text-[10px] sm:text-xs text-gray-900">
               Are you a candidate?{' '}
               <Link to="/user-register" className="text-[#6B21A8] hover:underline font-extrabold">
                 Register here
@@ -168,7 +168,7 @@ const AdminRegister = () => {
         </div>
 
         {/* ── RIGHT: Recruiter Panel ── */}
-        <div className="hidden md:flex flex-1 bg-[#6B21A8] p-8 lg:p-10 flex-col justify-between relative overflow-hidden">
+        <div className="hidden md:flex flex-1 bg-[#6B21A8] p-4 lg:p-7 flex-col justify-between relative overflow-hidden">
           {/* Decorative */}
           <div className="absolute w-56 h-56 rounded-full border-[28px] border-white/10 -top-16 -right-16 pointer-events-none" />
           <div className="absolute w-36 h-36 rotate-45 border-[18px] border-white/10 bottom-20 -left-10 pointer-events-none" />
@@ -185,7 +185,7 @@ const AdminRegister = () => {
             </p>
 
             {/* Feature list */}
-            <div className="space-y-3 lg:space-y-4">
+            <div className="space-y-2 lg:space-y-3">
               {[
                 { icon: <Briefcase size={14} className="lg:w-4" />, title: 'Post unlimited jobs',     desc: 'Create detailed listings and reach thousands of candidates instantly.' },
                 { icon: <Users size={14} className="lg:w-4" />,     title: 'Smart applicant tracking', desc: 'Review, filter, and update applicant statuses in one click.' },
@@ -205,7 +205,7 @@ const AdminRegister = () => {
           </div>
 
           {/* Bottom stat strip */}
-          <div className="relative z-10 grid grid-cols-3 gap-2 lg:gap-3 mt-6 lg:mt-8">
+          <div className="relative z-10 grid grid-cols-3 gap-2 lg:gap-3 mt-1 lg:mt-1">
             {[
               { value: '3,500+', label: 'Companies' },
               { value: '50K+',   label: 'Jobs Posted' },

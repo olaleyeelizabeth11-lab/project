@@ -28,27 +28,27 @@ const AdminLogin = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center p-3 sm:p-4 md:p-6 lg:p-8 bg-[#f7f5ff] font-sans">
-            <div className="w-full max-w-4xl flex flex-col md:flex-row border-2 border-[#1a0a2e] rounded-lg sm:rounded-2xl overflow-hidden">
+        <div className="min-h-screen flex items-center justify-center p-1 sm:p-2 md:p-4 lg:p-1 bg-[#f7f5ff] font-sans">
+            <div className="w-full max-w-4xl flex flex-col md:flex-row  shadow-[0px_0px_1px_1px_rgba(26,10,46,0.8)] sm:shadow-[0px_0px_1px_1px_rgba(26,10,46,0.2)] rounded-lg sm:rounded-2xl overflow-hidden">
 
                 {/* ── LEFT: Login Form ── */}
-                <div className="flex-1 bg-white p-4 sm:p-6 md:p-8 lg:p-10 flex flex-col justify-between">
+                <div className="flex-1 bg-white p-4 sm:p-6 md:p-8 lg:p-6 flex flex-col justify-between">
                     <div>
                         {/* Brand */}
-                        <div className="flex items-center gap-2 mb-4 sm:mb-6 md:mb-8">
-                            <div className="w-7 sm:w-8 h-7 sm:h-8 bg-[#6B21A8] rounded-lg flex items-center justify-center border border-[#1a0a2e]">
+                        <div className="flex items-center justify-center gap-2 mb-2 sm:mb-6 md:mb-8">
+                            <div className="w-7 sm:w-8 h-7 sm:h-8 bg-[#6B21A8] rounded-lg flex items-center justify-center">
                                 <Building2 size={14} className="text-white sm:w-4" />
                             </div>
                             <span className="text-xs sm:text-sm font-extrabold text-[#1a0a2e] tracking-tight">Recruiter Portal</span>
                         </div>
 
-                        <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#0a0a0a] mb-1">Admin Sign In</h2>
-                        <p className="text-xs sm:text-sm text-gray-500 mb-4 sm:mb-6 md:mb-8">Access your recruiter dashboard.</p>
+                        <h2 className="text-xl text-center sm:text-2xl md:text-3xl font-extrabold text-[#0a0a0a] mb-2">Admin Sign In</h2>
+                        <p className="text-sm text-center sm:text-sm text-gray-900 mb-4 sm:mb-6 md:mb-8">Access your recruiter dashboard.</p>
 
-                        <form onSubmit={handleLogin} className="space-y-3 sm:space-y-4 md:space-y-5">
+                        <form onSubmit={handleLogin} className="space-y-2 sm:space-y-3 md:space-y-4">
                             {/* Email */}
                             <div>
-                                <label className="block text-[8px] sm:text-[10px] font-mono uppercase tracking-widest text-[#1a0a2e] font-bold mb-1.5">
+                                <label className="block text-[9px] sm:text-[13px] font-mono uppercase tracking-widest text-[#1a0a2e] font-bold mb-1.5">
                                     Admin Email
                                 </label>
                                 <div className="relative">
@@ -65,11 +65,11 @@ const AdminLogin = () => {
 
                             {/* Password */}
                             <div>
-                                <label className="block text-[8px] sm:text-[10px] font-mono uppercase tracking-widest text-[#1a0a2e] font-bold mb-1.5">
+                                <label className="block text-[9px] sm:text-[13px] font-mono uppercase tracking-widest text-[#1a0a2e] font-bold mb-1.5">
                                     Password
                                 </label>
                                 <div className="relative">
-                                    <Lock size={12} className="absolute top-1/2 -translate-y-1/2 left-3 text-[#9d75c7] sm:w-4" />
+                                    <Lock size={20} className="absolute top-1/2 -translate-y-1/2 left-3 text-[#9d75c7] sm:w-4" />
                                     <input
                                         type={showPassword ? "text" : "password"}
                                         placeholder="••••••••"
@@ -80,13 +80,13 @@ const AdminLogin = () => {
                                     <button type="button"
                                         onClick={() => setShowPassword(!showPassword)}
                                         className="absolute top-1/2 -translate-y-1/2 right-3 text-[#9d75c7] hover:text-[#6B21A8]">
-                                        {showPassword ? <EyeOff size={12} className="sm:w-4" /> : <Eye size={12} className="sm:w-4" />}
+                                        {showPassword ? <EyeOff size={12} className="sm:w-4" /> : <Eye size={20} className="sm:w-4" />}
                                     </button>
                                 </div>
                             </div>
 
                             <button type="submit" disabled={loading}
-                                className="w-full bg-[#6B21A8] hover:bg-[#5b1890] text-white font-extrabold py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm tracking-wide transition-all border border-[#1a0a2e] disabled:opacity-50">
+                                className="w-full bg-[#6B21A8] hover:bg-[#5b1890] text-white font-extrabold py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm tracking-wide transition-all cursor-pointer disabled:opacity-50">
                                 {loading ? 'Signing In...' : 'Access Dashboard'}
                             </button>
                         </form>

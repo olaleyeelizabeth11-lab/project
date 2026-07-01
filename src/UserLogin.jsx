@@ -28,19 +28,19 @@ const UserLogin = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center p-3 sm:p-4 md:p-6 lg:p-8 bg-white font-sans">
-            <div className="w-full max-w-4xl flex flex-col md:flex-row border-2 border-[#1a0a2e] rounded-lg sm:rounded-2xl overflow-hidden shadow-[4px_4px_0px_0px_rgba(26,10,46,0.8)] sm:shadow-[2px_2px_0px_0px_rgba(26,10,46,1)]">
+        <div className="min-h-screen flex items-center justify-center p-1 sm:p-4 md:p-2 lg:p-2 bg-white font-sans">
+            <div className="w-full max-w-4xl flex flex-col md:flex-row rounded-lg sm:rounded-2xl overflow-hidden shadow-[0px_0px_1px_1px_rgba(26,10,46,0.2)] sm:shadow-[0px_0px_1px_1px_rgba(26,10,46,0.2)]">
 
                 {/* ── LEFT: Login Form ── */}
                 <div className="flex-1 bg-white p-4 sm:p-6 md:p-8 lg:p-10 flex flex-col justify-between">
                     <div>
-                        <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#0a0a0a] mb-1">Welcome Back</h2>
-                        <p className="text-xs sm:text-sm text-gray-500 mb-4 sm:mb-6 md:mb-8">Sign in to continue your job search.</p>
+                        <h2 className="text-xl text-center sm:text-2xl md:text-3xl font-extrabold text-[#0a0a0a] mb-1">Welcome Back</h2>
+                        <p className="text-sm text-center mt-2 sm:text-sm text-gray-900 mb-4 sm:mb-6 md:mb-8">Sign in to continue your job search.</p>
 
                         <form onSubmit={handleLogin} className="space-y-3 sm:space-y-4 md:space-y-5">
                             {/* Email */}
                             <div>
-                                <label className="block text-[8px] sm:text-[10px] font-mono uppercase tracking-widest text-[#1a0a2e] font-bold mb-1.5">
+                                <label className="block text-[9px] sm:text-[13px] font-mono uppercase tracking-widest text-[#1a0a2e] font-bold mb-1.5">
                                     Email Address
                                 </label>
                                 <div className="relative">
@@ -58,7 +58,7 @@ const UserLogin = () => {
                             {/* Password */}
                             <div>
                                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-0 mb-1.5">
-                                    <label className="block text-[8px] sm:text-[10px] font-mono uppercase tracking-widest text-[#1a0a2e] font-bold">
+                                    <label className="block text-[9px] sm:text-[13px] font-mono uppercase tracking-widest text-[#1a0a2e] font-bold">
                                         Password
                                     </label>
                                     <Link to="/forgot-password" className="text-[8px] sm:text-[10px] font-mono text-[#6B21A8] hover:underline">
@@ -79,7 +79,7 @@ const UserLogin = () => {
                                         onClick={() => setShowPassword(!showPassword)}
                                         className="absolute top-1/2 -translate-y-1/2 right-3 text-[#9d75c7] hover:text-[#6B21A8]"
                                     >
-                                        {showPassword ? <EyeOff size={12} className="sm:w-3.5" /> : <Eye size={12} className="sm:w-3.5" />}
+                                        {showPassword ? <EyeOff size={12} className="sm:w-3.5" /> : <Eye size={20} className="sm:w-3.5" />}
                                     </button>
                                 </div>
                             </div>
@@ -87,7 +87,7 @@ const UserLogin = () => {
                             <button
                                 type="submit"
                                 disabled={loading}
-                                className="w-full bg-[#6B21A8] hover:bg-[#5b1890] text-white font-extrabold py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm tracking-wide transition-all shadow-[2px_2px_0px_0px_rgba(26,10,46,0.8)] sm:shadow-[3px_3px_0px_0px_rgba(26,10,46,1)] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_0px_rgba(26,10,46,1)] disabled:opacity-50"
+                                className="w-full cursor-pointer bg-[#6B21A8] hover:bg-[#5b1890] text-white font-extrabold py-2.5 sm:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm tracking-wide transition-all active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_0px_rgba(26,10,46,1)] disabled:opacity-50"
                             >
                                 {loading ? 'Signing In...' : 'Sign In'}
                             </button>
@@ -95,7 +95,7 @@ const UserLogin = () => {
 
                         <div className="relative flex items-center gap-3 my-3 sm:my-4 md:my-5">
                             <div className="flex-1 border-t-2 border-dashed border-[#d8c7f0]"></div>
-                            <span className="text-[7px] sm:text-[10px] font-mono text-[#9d75c7] uppercase tracking-widest whitespace-nowrap">Or continue with</span>
+                            <span className="text-[7px] sm:text-[10px] font-mono text-dark uppercase tracking-widest whitespace-nowrap">Or continue with</span>
                             <div className="flex-1 border-t-2 border-dashed border-[#d8c7f0]"></div>
                         </div>
 
@@ -108,7 +108,7 @@ const UserLogin = () => {
                         </div>
                     </div>
 
-                    <p className="mt-4 sm:mt-6 md:mt-8 text-[10px] sm:text-xs text-gray-500 text-center">
+                    <p className="mt-4 sm:mt-6 md:mt-8 text-[13px] sm:text-xs text-gray-900 text-center">
                         Don't have an account?{' '}
                         <Link to="/user-register" className="text-[#6B21A8] hover:underline font-extrabold">
                             Sign Up
